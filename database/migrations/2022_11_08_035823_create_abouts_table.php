@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFrontendsTable extends Migration
+class CreateAboutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFrontendsTable extends Migration
      */
     public function up()
     {
-        Schema::create('frontends', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateFrontendsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('frontends');
+        Schema::dropIfExists('abouts');
     }
 }
