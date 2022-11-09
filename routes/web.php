@@ -11,6 +11,8 @@ use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\BlogDetailController;
 use App\Http\Controllers\Frontend\DietDetailController;
+use App\Http\Controllers\Backend\BGalleryController;
+use App\Http\Controllers\Backend\DashBoardController;
 
 
 
@@ -47,19 +49,14 @@ Route::resource('gallery', GalleryController::class);
 Route::resource('blog_detail', BlogDetailController::class);
 Route::resource('diet_detail', DietDetailController::class);
 
+// Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+    Route::resource('bgallery',BGalleryController::class);
+    Route::resource('dashboard',BGalleryController::class);
+// });
+
 // Route::resource('blog', BlogController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
