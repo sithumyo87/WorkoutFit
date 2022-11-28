@@ -1,0 +1,11 @@
+Offer -> 
+
+Diet Plan ->  Category 
+          -> Blog
+          ->Calories
+
+Blog -> Category
+        -> Blog Post
+
+Trainee -> Category 
+        -> Post 
