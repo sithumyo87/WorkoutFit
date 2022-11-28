@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('title')</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="css/materialdesignicons.min.css" type="text/css">
-    <link rel="stylesheet" href="css/vendor.bundle.base.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/materialdesignicons.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/vendor.bundle.base.css')}}" type="text/css">
 
     <!-- Layout styles -->
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="{{asset('css/style2.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" />
 </head>
 
 <body>
@@ -410,25 +410,25 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="js/vendor.bundle.base.js"></script>
+    <script src="{{asset('js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/progressbar.js/progressbar.min.js"></script>
-    <script src="vendor/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="vendor/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="vendor/owl-carousel-2/owl.carousel.min.js"></script>
-    <script src="js/jqury.cookie.js" type="text/javascript"></script>
+    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('vendor/progressbar.js/progressbar.min.js')}}"></script>
+    <script src="{{asset('vendor/jvectormap/jquery-jvectormap.min.js')}}"></script>
+    <script src="{{asset('vendor/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{asset('vendor/owl-carousel-2/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/jqury.cookie.js')}}" type="text/javascript"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="js/offcanvas.js"></script>
-    <script src="js/hovrable-collapse.js"></script>
-    <script src="js/mis.js"></script>
-    <script src="js/setings.js"></script>
-    <script src="js/todlist.js"></script>
+    <script src="{{asset('js/offcanvas.js')}}"></script>
+    <script src="{{asset('js/hovrable-collapse.js')}}"></script>
+    <script src="{{asset('js/mis.js')}}"></script>
+    <script src="{{asset('js/setings.js')}}"></script>
+    <script src="{{asset('js/todlist.js')}}"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="js/dasboard.js"></script>
+    <script src="{{asset('js/dasboard.js')}}"></script>
     <!-- End custom js for this page -->
 </body>
 

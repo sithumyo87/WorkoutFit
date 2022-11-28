@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class BGalleryController extends Controller
 {
@@ -24,7 +25,7 @@ class BGalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.Gallery.create');
     }
 
     /**
@@ -35,7 +36,10 @@ class BGalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Gallery::create([
+            'name' => $request['name'],
+        ]);
+        return redirect()->route('bgallery.index')->with('msg','Successfully Inserted');
     }
 
     /**
