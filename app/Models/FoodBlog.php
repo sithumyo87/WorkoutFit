@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class FoodBlog extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name','description','training_id','image','disable'
-    ];
+    
 }

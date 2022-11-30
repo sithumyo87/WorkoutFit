@@ -1,11 +1,12 @@
-Offer -> 
+Offer -> offer Category -> name -
+        -> Post Category -> name, category_id, image-
 
-Diet Plan ->  Category 
-          -> Blog
+Diet Plan ->  Category -> name -
+          -> Blog -
           ->Calories
 
-Blog -> Category
-        -> Blog Post
+Blog ->  Blog Post -> name , description, image - 
 
-Trainee -> Category 
-        -> Post 
+Trainee -> Category -> name 
+        -> Post -> name, description , trainee_id, video 
+
