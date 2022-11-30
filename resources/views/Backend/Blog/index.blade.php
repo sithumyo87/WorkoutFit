@@ -13,7 +13,7 @@
     <div class="form-group">
         <a href="{{route('bgallery.create')}}"><button class="btn btn-primary "><i
                     class="mdi mdi-plus-circle-outline text-white">
-                </i> Add Gallery</button></a>
+                </i> Add Blog</button></a>
     </div>
     <table class="table table-bordered">
         <tr>
@@ -22,9 +22,9 @@
             <th colspan="2">Action</th>
         </tr>
      
-        @foreach($gallery as $key=>$row)
+        @foreach($blogs as $key=>$row)
         <tr>
-            <td class="text-center">{{ $key+ $gallery->firstItem() }}</td>
+            <td class="text-center">{{ $key+ $blogs->firstItem() }}</td>
             <td>
                 <div>
                     <img src="{{Storage::url($row->image)}}" alt="">
@@ -46,7 +46,7 @@
     </table>
     <br>
     <div class="d-flex ">
-        {!! $gallery->links() !!}
+        {!! $blogs->links() !!}
     </div>
 </div>
 @endsection

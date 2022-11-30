@@ -109,26 +109,58 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
+                    <a class="nav-link" href="{{ route('bgallery.index')}}">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-speedometer"></i>
+                        </span>
+                        <span class="menu-title">Gallery</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="{{route('bblog.index')}}">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-speedometer"></i>
+                        </span>
+                        <span class="menu-title">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
                     <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                         aria-controls="ui-basic">
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
                         </span>
-                        <span class="menu-title">Basic UI Elements</span>
+                        <span class="menu-title">Diet</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                            </li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                                    href="pages/ui-features/dropdowns.html">Diet Blog</a></li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/typography.html">Typography</a></li>
+                                    href="pages/ui-features/typography.html">Diet category</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item menu-items">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#training" aria-expanded="false"
+                        aria-controls="ui-basic">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-laptop"></i>
+                        </span>
+                        <span class="menu-title">Training</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="training">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link"
+                                    href="pages/ui-features/dropdowns.html">Training Blog</a></li>
+                            <li class="nav-item"> <a class="nav-link"
+                                    href="pages/ui-features/typography.html">Trainng Category</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- <li class="nav-item menu-items">
                     <a class="nav-link" href="pages/forms/basic_elements.html">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
@@ -189,7 +221,7 @@
                         </span>
                         <span class="menu-title">Documentation</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
         <!-- partial -->
@@ -429,6 +461,7 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{asset('js/dasboard.js')}}"></script>
+    
     <!-- End custom js for this page -->
 </body>
 

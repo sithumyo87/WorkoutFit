@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\BlogController;
-use App\Http\Controllers\Frontend\ContactController;
-use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\BMIController;
+use App\Http\Controllers\Backend\BBlogController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\DietController;
-use App\Http\Controllers\Frontend\TrainingController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Backend\BGalleryController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
+use App\Http\Controllers\Backend\DashBoardController;
+use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\BlogDetailController;
 use App\Http\Controllers\Frontend\DietDetailController;
-use App\Http\Controllers\Backend\BGalleryController;
-use App\Http\Controllers\Backend\DashBoardController;
 
 
 
@@ -50,8 +51,9 @@ Route::resource('blog_detail', BlogDetailController::class);
 Route::resource('diet_detail', DietDetailController::class);
 
 // Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
-    Route::resource('bgallery',BGalleryController::class);
-    Route::resource('dashboard',BGalleryController::class);
+Route::resource('bgallery',BGalleryController::class);
+Route::resource('dashboard',BGalleryController::class);
+Route::resource('bblog',BBlogController::class);
 // });
 
 // Route::resource('blog', BlogController::class);
