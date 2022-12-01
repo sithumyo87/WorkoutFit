@@ -17,7 +17,7 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->integer('training_id');
+            $table->integer('category_id');
             $table->string('image');
             $table->integer('disable')->default('0');
             $table->timestamps();

@@ -11,13 +11,15 @@
     </div>
     @endif
     <div class="form-group">
-        <a href="{{route('bgallery.create')}}"><button class="btn btn-primary "><i
+        <a href="{{route('bblog.create')}}"><button class="btn btn-primary "><i
                     class="mdi mdi-plus-circle-outline text-white">
                 </i> Add Blog</button></a>
     </div>
     <table class="table table-bordered">
         <tr>
             <th class="text-center">Id</th>
+            <th>Title</th>
+            <th>Description</th>
             <th>Image</th>
             <th colspan="2">Action</th>
         </tr>
@@ -25,6 +27,9 @@
         @foreach($blogs as $key=>$row)
         <tr>
             <td class="text-center">{{ $key+ $blogs->firstItem() }}</td>
+            <td>{{$row->name}}</td>
+            <td>{{$row->description}}</td>
+            <td>{{$row->category->name}}</td>
             <td>
                 <div>
                     <img src="{{Storage::url($row->image)}}" alt="">
@@ -35,8 +40,8 @@
                 <form action="{{route('bgallery.destroy',$row->id)}}" method="post">
                 @csrf
                            @method('DELETE')
-                           <button class="btn btn-md"><a href="{{ route('bgallery.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
-                    </i></a></button>
+                           <a href="{{ route('bgallery.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
+                    </i></a>
                         <a href=""><button type="submit" class="btn btn-md" onclick="return confirm('Are you sure to delete?')"><i class="mdi mdi-trash-can-outline text-danger"></i></button></a>
             </td>
             </form>

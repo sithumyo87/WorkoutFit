@@ -117,12 +117,22 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="{{route('bblog.index')}}">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic2" aria-expanded="false"
+                        aria-controls="ui-basic2">
                         <span class="menu-icon">
-                            <i class="mdi mdi-speedometer"></i>
+                            <i class="mdi mdi-laptop"></i>
                         </span>
                         <span class="menu-title">Blog</span>
+                        <i class="menu-arrow"></i>
                     </a>
+                    <div class="collapse" id="ui-basic2">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link"
+                                    href="{{route('bblog.index')}}"> Blogs</a></li>
+                            <li class="nav-item"> <a class="nav-link"
+                                    href="{{route('blogcat.index')}}">Blog category</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item menu-items">
                     <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"

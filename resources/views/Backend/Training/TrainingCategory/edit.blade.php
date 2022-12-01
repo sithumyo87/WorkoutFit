@@ -14,19 +14,8 @@
                     </div>
                 @endif
                 <div class="form-group">
-                    <label for="name">title </label>
-                    <input type="text" placeholder="Enter Your Blog Title" class="form-control text-white" name="name" value="{{$blog->name}}" >
-                </div>
-                <div class="form-group">
-                    <label for="description">Description </label>
-                    <input type="file" placeholder="Enter Your Description" class="form-control text-white" name="description" value="{{$blog->description}}" >
-                </div>
-                <div class="form-group ">
-                    <label for="image">Image</label>
-                    <input type="file"  name="image"class="form-control text-white" name="image" accept="image/*">
-                </div>
-                <div>
-                    <img src="{{Storage::url($gallery->image)}}" width="140px" alt="" class="mt-3">
+                    <label for="name">Training Category </label>
+                    <input type="text" placeholder="Enter Your Training Category Title" class="form-control text-white" name="name" value="{{$tc->name}}" >
                 </div>
                 <button class="btn btn-primary mt-3"><i class="fas fa-paper-plane">Update</i></button>
             </form>

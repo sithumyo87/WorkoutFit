@@ -10,10 +10,12 @@ use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\BGalleryController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
+use App\Http\Controllers\Backend\BTrainingController;
 use App\Http\Controllers\Backend\DashBoardController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\BlogDetailController;
 use App\Http\Controllers\Frontend\DietDetailController;
+use App\Http\Controllers\Backend\BlogCategoryController;
 
 
 
@@ -54,6 +56,8 @@ Route::resource('diet_detail', DietDetailController::class);
 Route::resource('bgallery',BGalleryController::class);
 Route::resource('dashboard',BGalleryController::class);
 Route::resource('bblog',BBlogController::class);
+Route::resource('btrainingcat',BTrainingController::class);
+Route::resource('blogcat',BlogCategoryController::class);
 // });
 
 // Route::resource('blog', BlogController::class);
