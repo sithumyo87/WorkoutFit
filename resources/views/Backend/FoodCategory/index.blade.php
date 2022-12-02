@@ -11,9 +11,9 @@
     </div>
     @endif
     <div class="form-group">
-        <a href="{{route('btrainingcat.create')}}"><button class="btn btn-primary "><i
+        <a href="{{route('foodcat.create')}}"><button class="btn btn-primary "><i
                     class="mdi mdi-plus-circle-outline text-white">
-                </i> Add Training Category</button></a>
+                </i> Add Food Category</button></a>
     </div>
     <table class="table table-bordered">
         <tr>
@@ -21,20 +21,24 @@
             <th>Name</th>
             <th colspan="2">Action</th>
         </tr>
-     
-        @foreach($tc as $key=>$row)
+
+        @foreach($fc as $key=>$row)
         <tr>
-            <td class="text-center">{{ $key+ $tc->firstItem() }}</td>
+            <td class="text-center">{{ $key+ $fc->firstItem() }}</td>
             <td>{{$row->name}}</td>
+            <td> <a href="{{ route('foodcat.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
+                    </i></a></td>
             <td>
-                
-                <form action="{{route('btrainingcat.destroy',$row->id)}}" method="post">
-                @csrf
-                           @method('DELETE')
-                          <a href="{{ route('btrainingcat.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
-                    </i></a>
-                        <a href=""><button type="submit" class="btn btn-md" onclick="return confirm('Are you sure to delete?')"><i class="mdi mdi-trash-can-outline text-danger"></i></button></a>
+
+                <form action="{{route('foodcat.destroy',$row->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+
+                    <a href=""><button type="submit" class="btn btn-md"
+                            onclick="return confirm('Are you sure to delete?')"><i
+                                class="mdi mdi-trash-can-outline text-danger"></i></button></a>
             </td>
+
             </form>
         </tr>
         @endforeach
@@ -42,7 +46,7 @@
     </table>
     <br>
     <div class="d-flex ">
-        {!! $tc->links() !!}
+        {!! $fc->links() !!}
     </div>
 </div>
 @endsection

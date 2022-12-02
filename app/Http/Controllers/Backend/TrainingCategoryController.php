@@ -2,24 +2,23 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Training;
 use Illuminate\Http\Request;
 use App\Models\TrainingCategory;
 use App\Http\Controllers\Controller;
 
-class BTrainingController extends Controller
+class TrainingCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function index()
     {
         
-        $training = Training::where('disable',0)->latest()->paginate(5);
+        $tc = TrainingCategory::where('disable',0)->latest()->paginate(5);
         // dd($gallery);
-        return view('Backend.Training.index',compact('training'));
+        return view('Backend.TrainingCategory.index',compact('tc'));
     }
 
     /**
@@ -29,8 +28,7 @@ class BTrainingController extends Controller
      */
     public function create()
     {
-        $trainingcat = TrainingCategory::where('disable',0)->get();
-        return view('Backend.Training.create',compact('trainingcat'));
+        return view('Backend.TrainingCategory.create');
     }
 
     /**
@@ -41,13 +39,10 @@ class BTrainingController extends Controller
      */
     public function store(Request $request)
     {
-        Training::create([
+        TrainingCategory::create([
             'name'=>$request->name,
-            'description' => $request->description,
-            'training_id' =>$request->training_id,
-            'video' => $request->video,
         ]);
-        return redirect()->route('btraining.index')->with('msg','Successfully Inserted');
+        return redirect()->route('trainingcat.index')->with('msg','Successfully Inserted');
     }
 
     /**
@@ -69,9 +64,8 @@ class BTrainingController extends Controller
      */
     public function edit($id)
     {
-        $training = Training::findOrFail($id);
-        $trainingcat = TrainingCategory::where('disable',0)->get();
-        return view('Backend.Training.edit',compact('training','trainingcat'));
+        $tc = TrainingCategory::findOrFail($id);
+        return view('Backend.TrainingCategory.edit',compact('tc'));
     }
 
     /**
@@ -83,13 +77,10 @@ class BTrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $t = Training::find($id);
-        $t->name = $request->name;
-        $t->description = $request->description;
-        $t->training_id = $request->training_id;
-        $t->video = $request->video;
-        $t->save();
-        return redirect()->route('btraining.index')->with('msg','Successfully Updated');
+        $tc = TrainingCategory::find($id);
+        $blog->name = $request->name;
+        $blog->save();
+        return redirect()->route('btrainingcat.index')->with('msg','Successfully Updated');
     }
 
     /**
@@ -100,9 +91,9 @@ class BTrainingController extends Controller
      */
     public function destroy($id)
     {
-        $tc = Training::findOrFail($id);
+        $tc = TrainingCategory::findOrFail($id);
         $tc->disable = 1;
         $tc->save();
-        return redirect()->route('btraining.index')->with('msg','Successfully Deleted');
+        return redirect()->route('trainingcat.index')->with('msg','Successfully Deleted');
     }
 }

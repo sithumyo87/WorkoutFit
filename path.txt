@@ -2,11 +2,12 @@ Offer -> offer Category -> name -
         -> Post Category -> name, category_id, image-
 
 Diet Plan ->  Category -> name -
-          -> Blog -
-          ->Calories
+          -> Blog - title , description ,image , Food_id
+          ->Calories - name , serving , Calories
 
 Blog ->  Blog Post -> name , description, image - 
 
 Trainee -> Category -> name 
         -> Post -> name, description , trainee_id, video 
+
 

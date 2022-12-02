@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\BMIController;
 use App\Http\Controllers\Backend\BBlogController;
+use App\Http\Controllers\Backend\BFoodController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\DietController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -16,6 +17,8 @@ use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\BlogDetailController;
 use App\Http\Controllers\Frontend\DietDetailController;
 use App\Http\Controllers\Backend\BlogCategoryController;
+use App\Http\Controllers\Backend\FoodCategoryController;
+use App\Http\Controllers\Backend\TrainingCategoryController;
 
 
 
@@ -56,8 +59,11 @@ Route::resource('diet_detail', DietDetailController::class);
 Route::resource('bgallery',BGalleryController::class);
 Route::resource('dashboard',BGalleryController::class);
 Route::resource('bblog',BBlogController::class);
-Route::resource('btrainingcat',BTrainingController::class);
+Route::resource('trainingcat',TrainingCategoryController::class);
 Route::resource('blogcat',BlogCategoryController::class);
+Route::resource('btraining',BTrainingController::class);
+Route::resource('bfood',BFoodController::class);
+Route::resource('foodcat',FoodCategoryController::class);
 // });
 
 // Route::resource('blog', BlogController::class);

@@ -4,7 +4,7 @@
     <div class="card mt-5 p-4">
         <div class="card-header bg-primary text-white"><h4>Edit Design Create Form</h4></div>
         <div class="card-body">
-            <form action="{{route('bblog.update',$gallery->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('trainingcat.update',$tc->id)}}" method="post" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 @if(session('msg'))
@@ -15,7 +15,7 @@
                 @endif
                 <div class="form-group">
                     <label for="name">Training Category </label>
-                    <input type="text" placeholder="Enter Your Training Category Title" class="form-control text-white" name="name" value="{{$tc->name}}" >
+                    <input type="text" placeholder="eg.chest" class="form-control text-white" name="name" value="{{$tc->name}}" >
                 </div>
                 <button class="btn btn-primary mt-3"><i class="fas fa-paper-plane">Update</i></button>
             </form>

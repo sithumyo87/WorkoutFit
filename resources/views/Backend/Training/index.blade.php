@@ -11,51 +11,46 @@
     </div>
     @endif
     <div class="form-group">
-        <a href="{{route('bblog.create')}}"><button class="btn btn-primary "><i
+        <a href="{{route('btraining.create')}}"><button class="btn btn-primary "><i
                     class="mdi mdi-plus-circle-outline text-white">
-                </i> Add Blog</button></a>
+                </i> Add Training</button></a>
     </div>
-    <div class="table-responsive">
-    <table class="table table-bordered ">
+    <table class="table table-bordered">
         <tr>
             <th class="text-center">Id</th>
             <th>Title</th>
             <th>Description</th>
             <th>Blog category</th>
-            <th>Image</th>
+            <th>Video Url</th>
             <th colspan="2">Action</th>
         </tr>
      
-        @foreach($blogs as $key=>$row)
+        @foreach($training as $key=>$row)
         <tr>
-            <td class="text-center">{{ $key+ $blogs->firstItem() }}</td>
+            <td class="text-center">{{ $key+ $training->firstItem() }}</td>
             <td>{{$row->name}}</td>
             <td>{{$row->description}}</td>
-            <td>{{$row->category->name}}</td>
-            <td>
-                <div>
-                    <img src="{{Storage::url($row->image)}}" alt="">
-                </div>
-            </td>
+            <td>{{$row->training_category->name}}</td>
+            <td>{{$row->video}}</td>
             <td>
                 
-                <form action="{{route('bblog.destroy',$row->id)}}" method="post">
+                <form action="{{route('btraining.destroy',$row->id)}}" method="post">
                 @csrf
                            @method('DELETE')
-                           <a href="{{ route('bgallery.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
-                    </i></a>
-                        <a href=""><button type="submit" class="btn btn-md" onclick="return confirm('Are you sure to delete?')"><i class="mdi mdi-trash-can-outline text-danger"></i></button></a>
+                           <a href="{{ route('btraining.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
+                    </i></a>       
+            </td>
+            <td>
+            <a href=""><button type="submit" class="btn btn-md" onclick="return confirm('Are you sure to delete?')"><i class="mdi mdi-trash-can-outline text-danger"></i></button></a>
             </td>
             </form>
         </tr>
         @endforeach
 
     </table>
-</div>
     <br>
     <div class="d-flex ">
-        {!! $blogs->links() !!}
+        {!! $training->links() !!}
     </div>
 </div>
 @endsection
-

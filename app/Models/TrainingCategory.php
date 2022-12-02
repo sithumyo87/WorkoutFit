@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Training;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class TrainingCategory extends Model
 {
@@ -11,4 +12,7 @@ class TrainingCategory extends Model
     protected $fillable = [
         'name','disable'
     ];
+    public function trainings(){
+        return $this->hasMany(Training::class);
+    } 
 }

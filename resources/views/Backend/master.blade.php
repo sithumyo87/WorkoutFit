@@ -9,6 +9,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('css/materialdesignicons.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/vendor.bundle.base.css')}}" type="text/css">
+    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{asset('css/style2.css')}}">
@@ -146,9 +147,9 @@
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html">Diet Blog</a></li>
+                                    href="{{route('bfood.index')}}">Food Blog</a></li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/typography.html">Diet category</a></li>
+                                    href="{{route('foodcat.index')}}">Food category</a></li>
                         </ul>
                     </div>
                 </li>
@@ -164,9 +165,9 @@
                     <div class="collapse" id="training">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html">Training Blog</a></li>
+                                    href="{{route('btraining.index')}}">Training Blog</a></li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/typography.html">Trainng Category</a></li>
+                                    href="{{route('trainingcat.index')}}">Trainng Category</a></li>
                         </ul>
                     </div>
                 </li>
@@ -471,6 +472,11 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{asset('js/dasboard.js')}}"></script>
+
+    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+    </script>
     
     <!-- End custom js for this page -->
 </body>
