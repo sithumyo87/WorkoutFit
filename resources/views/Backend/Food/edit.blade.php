@@ -1,10 +1,10 @@
 @extends('Backend.master')
-@section('title','gallery')
+@section('title','Blog')
 @section('content')
     <div class="card mt-5 p-4">
-        <div class="card-header bg-primary text-white"><h4>Edit Design Create Form</h4></div>
+        <div class="card-header bg-primary text-white"><h4>Edit Blog Form</h4></div>
         <div class="card-body">
-            <form action="{{route('bblog.update',$gallery->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('bfood.update',$blog->id)}}" method="post" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 @if(session('msg'))
@@ -15,13 +15,13 @@
                 @endif
                 <div class="form-group">
                     <label for="name">title </label>
-                    <input type="text" placeholder="Enter Your Blog Title" class="form-control text-white" name="name" value="{{$blog->name}}" >
+                    <input type="text" placeholder="Enter Your Blog Title" class="form-control text-white" name="title" value="{{$blog->title}}" >
                 </div>
                 <div class="form-group">
                     <label for="description">Description </label>
-                    <input type="file" placeholder="Enter Your Description" class="form-control text-white" name="description" value="{{$blog->description}}" >
+                    <textarea name="description" id="summary-ckeditor" cols="30" rows="10" class="form-control text-white" >{!! $blog->description !!}</textarea> 
                 </div>
-                <label for="category_id">Blog Category</label>
+                <label for="category_id"> Category</label>
                 <select name="category_id" id="" class="form-control mt-3 text-white">      
                 <option value="">Choose Category</option>
                     @foreach($categories as $c)
@@ -33,7 +33,7 @@
                     <input type="file"  name="image"class="form-control text-white" name="image" accept="image/*">
                 </div>
                 <div>
-                    <img src="{{Storage::url($gallery->image)}}" width="140px" alt="" class="mt-3">
+                    <img src="{{Storage::url($blog->image)}}" width="140px" alt="" class="mt-3">
                 </div>
                 <button class="btn btn-primary mt-3"><i class="fas fa-paper-plane">Update</i></button>
             </form>

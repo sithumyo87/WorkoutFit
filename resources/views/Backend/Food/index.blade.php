@@ -1,5 +1,5 @@
 @extends('Backend.master')
-@section('title','Gallery')
+@section('title','Food BLog')
 @section('content')
 
 <div class="col-md-12 mt-5 ">
@@ -11,7 +11,7 @@
     </div>
     @endif
     <div class="form-group">
-        <a href="{{route('bblog.create')}}"><button class="btn btn-primary "><i
+        <a href="{{route('bfood.create')}}"><button class="btn btn-primary "><i
                     class="mdi mdi-plus-circle-outline text-white">
                 </i> Add Blog</button></a>
     </div>
@@ -29,9 +29,9 @@
         @foreach($blogs as $key=>$row)
         <tr>
             <td class="text-center">{{ $key+ $blogs->firstItem() }}</td>
-            <td>{{$row->name}}</td>
+            <td>{{$row->title}}</td>
             <td>{{$row->description}}</td>
-            <td>{{$row->category->name}}</td>
+            <td>{{$row->food_category->name}}</td>
             <td>
                 <div>
                     <img src="{{Storage::url($row->image)}}" alt="">
@@ -42,7 +42,7 @@
                 <form action="{{route('bblog.destroy',$row->id)}}" method="post">
                 @csrf
                            @method('DELETE')
-                           <a href="{{ route('bgallery.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
+                           <a href="{{ route('bfood.edit',$row->id)}}"><i class="mdi mdi-square-edit-outline">
                     </i></a>
                         <a href=""><button type="submit" class="btn btn-md" onclick="return confirm('Are you sure to delete?')"><i class="mdi mdi-trash-can-outline text-danger"></i></button></a>
             </td>

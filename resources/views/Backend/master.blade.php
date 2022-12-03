@@ -150,6 +150,8 @@
                                     href="{{route('bfood.index')}}">Food Blog</a></li>
                             <li class="nav-item"> <a class="nav-link"
                                     href="{{route('foodcat.index')}}">Food category</a></li>
+                                    <li class="nav-item"> <a class="nav-link"
+                                    href="{{route('foodcat.index')}}">Food Calories</a></li>
                         </ul>
                     </div>
                 </li>

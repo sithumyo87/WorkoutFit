@@ -15,6 +15,11 @@ class CreateFoodBlogsTable extends Migration
     {
         Schema::create('food_blogs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->integer('food_id');
+            $table->string('image');
+            $table->integer('disable')->default(0);
             $table->timestamps();
         });
     }

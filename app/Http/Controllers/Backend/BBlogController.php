@@ -70,8 +70,9 @@ class BBlogController extends Controller
      */
     public function edit($id)
     {
+        $categories = FoodCategory::where('disable',0)->get();
         $blog = Blog::findOrFail($id);
-        return view('Backend.Blog.edit',compact('blog'));
+        return view('Backend.Blog.edit',compact('blog','categories'));
     }
 
     /**

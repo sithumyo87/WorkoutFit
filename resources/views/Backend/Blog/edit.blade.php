@@ -4,7 +4,7 @@
     <div class="card mt-5 p-4">
         <div class="card-header bg-primary text-white"><h4>Edit Design Create Form</h4></div>
         <div class="card-body">
-            <form action="{{route('bblog.update',$gallery->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('bblog.update',$blog->id)}}" method="post" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 @if(session('msg'))
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description </label>
-                    <input type="file" placeholder="Enter Your Description" class="form-control text-white" name="description" value="{{$blog->description}}" >
+                    <textarea name="description" id="summary-ckeditor" cols="30" rows="10" class="form-control text-white" >{!! $blog->description !!}</textarea> 
                 </div>
                 <label for="category_id">Blog Category</label>
                 <select name="category_id" id="" class="form-control mt-3 text-white">      

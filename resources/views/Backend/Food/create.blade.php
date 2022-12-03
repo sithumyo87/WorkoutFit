@@ -1,21 +1,21 @@
 @extends('Backend.master')
-@section('title','Gallery')
+@section('title','Food Blog')
 @section('content')
 
 
 <div class="col-md-12 mt-5 ">
-    <form action="{{route('bblog.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('bfood.store')}}" method="post" enctype="multipart/form-data">
     @csrf
         <fieldset>
             <legend>Create Blog</legend>
             <div class="col-md-6">
             <div class="form-group">
-                    <label for="name">title </label>
-                    <input type="text" placeholder="Enter Your Blog Title" class="form-control text-white" name="name" >
+                    <label for="title">title </label>
+                    <input type="text" placeholder="Enter Your Blog Title" class="form-control text-white" name="title" >
                 </div>
                 <div class="form-group">
                     <label for="description">Description </label>
-                    <textarea name="description" id="" cols="30" rows="10" class="form-control text-white"></textarea>
+                    <textarea name="description" id="summary-ckeditor" cols="30" rows="10" class="form-control text-white"></textarea>
                 </div>
 
                 <label for="category_id">Blog Category</label>

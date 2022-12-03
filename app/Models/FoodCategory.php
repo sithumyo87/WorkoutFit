@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\FoodBlog;
+use App\Models\FoodCalories;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FoodCategory extends Model
 {
@@ -11,4 +13,7 @@ class FoodCategory extends Model
     protected $fillable = [
         'name','disable'
     ];
+    public function foods(){
+        return $this->hasMany(FoodBlog::class);
+    }
 }

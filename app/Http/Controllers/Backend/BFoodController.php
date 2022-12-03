@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\Models\FoodBlog;
+use App\Models\FoodCategory;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class BFoodController extends Controller
 {
@@ -14,7 +16,10 @@ class BFoodController extends Controller
      */
     public function index()
     {
-        //
+        
+        $blogs = FoodBlog::where('disable',0)->latest()->paginate(5);
+        // dd($gallery);
+        return view('Backend.Food.index',compact('blogs'));
     }
 
     /**
@@ -24,7 +29,8 @@ class BFoodController extends Controller
      */
     public function create()
     {
-        //
+        $categories = FoodCategory::where('disable',0)->get();
+        return view('Backend.Food.create',compact('categories'));
     }
 
     /**
@@ -35,7 +41,15 @@ class BFoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $path = $request->image->store('public/blog');
+        $query = FoodBlog::create([
+            'title'=>$request->title,
+            'description' => $request->description,
+            'food_id' =>$request->category_id,
+            'image' => $path,
+        ]);
+        
+        return redirect()->route('bfood.index')->with('msg','Successfully Inserted');
     }
 
     /**
@@ -57,7 +71,9 @@ class BFoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = FoodCategory::where('disable',0)->get();
+        $blog = FoodBlog::findOrFail($id);
+        return view('Backend.Food.edit',compact('blog','categories'));
     }
 
     /**
@@ -69,7 +85,18 @@ class BFoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $blog = FoodBlog::find($id);
+        if($request->has('image')){
+            $path = $request->image->store('public/blog');
+        }else{
+            $path = $blog->image;
+        }
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->food_id = $request->category_id;
+        $blog->image = $path;
+        $blog->save();
+        return redirect()->route('bfood.index')->with('msg','Successfully Updated');
     }
 
     /**
@@ -80,6 +107,9 @@ class BFoodController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = FoodBlog::findOrFail($id);
+        $blog->disable = 1;
+        $blog->save();
+        return redirect()->route('bfood.index')->with('msg','Successfully Deleted');
     }
 }
